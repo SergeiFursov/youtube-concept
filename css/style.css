@@ -6,14 +6,21 @@ body {
   font-family: "Mulish", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  background-color: #fff;
 }
 
 .page-header {
   display: flex;
   align-items: center;
+  width: 100%;
   min-height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
   margin-bottom: 30px;
   padding: 20px 70px 20px 32px;
+  background-color: #fff;
+  z-index: 99;
 }
 
 .menu-button {
@@ -99,7 +106,49 @@ body {
 }
 
 .sidebar {
+  position: fixed;
+  top: 114px;
+  left: 0;
+  width: 12%;
+  height: calc(100% - 114px);
   padding: 0 0 0 32px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.content {
+  width: 100%;
+  min-height: 400px;
+  margin: 85px 0 0 0;
+  padding-top: 30px;
+  padding-left: 13%;
+}
+
+.channel {
+  position: relative;
+  margin: 0 0 50px 0;
+}
+
+.channel-title {
+  display: flex;
+  align-items: center;
+  margin: 0 0 30px 0;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 33px;
+  color: #19202c;
+  text-decoration: none;
+}
+
+.channel-avatar {
+  width: 50px;
+  height: 50px;
+  margin: 0 20px 0 0;
+  border-radius: 50%;
+}
+
+.channel-button {
+  cursor: pointer;
 }
 
 .nav-menu {
@@ -147,4 +196,80 @@ body {
   font-weight: bold;
   font-size: 18px;
   line-height: 23px;
+}
+
+.video-card {
+  width: 250px;
+}
+
+.video-thumb {
+  position: relative;
+  width: 250px;
+  height: 150px;
+}
+
+.video-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 3px 9px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #fff;
+  background: rgba(0, 0, 0, 30%);
+  mix-blend-mode: normal;
+  border-radius: 12px;
+}
+
+.video-title {
+  margin: 10px 0 4px 0;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #19202c;
+}
+
+.video-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  line-height: 16px;
+  color: #c2c2c2;
+}
+
+.video-views::after {
+  display: inline-block;
+  content: " ";
+  width: 2px;
+  height: 2px;
+  vertical-align: middle;
+  background-color: #c2c2c2;
+  margin: 0 0 0 5px;
+}
+
+.slider-buttons {
+  position: absolute;
+  top: 15px;
+  right: 149px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 66px;
+}
+
+.video-card-recommended {
+  width: 525px;
+}
+
+.video-thumb-recommended {
+  position: relative;
+  width: 525px;
+  height: 250px;
+}
+
+.video-duration-recommended {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
