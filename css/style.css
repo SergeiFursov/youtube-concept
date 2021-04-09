@@ -55,6 +55,7 @@ body {
   align-items: center;
   max-width: 830px;
   width: 50%;
+  margin-right: 40px;
   padding-right: 17px;
   background: #ebebeb;
   border-radius: 22px;
@@ -65,6 +66,10 @@ body {
   padding: 12px 0 12px 23px;
   background-color: transparent;
   border: none;
+}
+
+.mobile-search {
+  display: none;
 }
 
 .btn-search {
@@ -99,17 +104,22 @@ body {
 .user-link {
   margin-left: 40px;
 }
+
 .user-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 
+.mobile-sidebar {
+  display: none;
+}
+
 .sidebar {
   position: fixed;
+  width: 200px;
   top: 114px;
   left: 0;
-  width: 12%;
   height: calc(100% - 114px);
   padding: 0 0 0 32px;
   overflow-y: auto;
@@ -120,8 +130,7 @@ body {
   width: 100%;
   min-height: 400px;
   margin: 85px 0 0 0;
-  padding-top: 30px;
-  padding-left: 13%;
+  padding: 30px 70px 0 250px;
 }
 
 .channel {
@@ -198,14 +207,17 @@ body {
   line-height: 23px;
 }
 
-.video-card {
-  width: 250px;
-}
-
 .video-thumb {
   position: relative;
-  width: 250px;
+  width: 100%;
   height: 150px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
 }
 
 .video-duration {
@@ -250,7 +262,7 @@ body {
 
 .slider-buttons {
   position: absolute;
-  top: 15px;
+  top: 8px;
   right: 149px;
   display: flex;
   align-items: center;
@@ -258,13 +270,14 @@ body {
   width: 66px;
 }
 
-.video-card-recommended {
-  width: 525px;
+@media (max-width: 1200px) {
+  .slider-buttons {
+    right: 0;
+  }
 }
 
 .video-thumb-recommended {
   position: relative;
-  width: 525px;
   height: 250px;
 }
 
@@ -272,4 +285,122 @@ body {
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+@media (max-width: 860px) {
+  .icons-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 0 70px 20px 32px;
+  }
+  .user-link {
+    margin-left: 0;
+  }
+  .user-avatar {
+    margin-left: 24px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-sidebar {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99;
+  }
+
+  .mobile-sidebar .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 13px 0 11px 0;
+    border-top: 1px solid #f1f1f1;
+  }
+
+  .mobile-sidebar .nav-link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-text {
+    margin-left: 0;
+    font-size: 10px;
+    line-height: 13px;
+  }
+
+  .slider-buttons {
+    display: none;
+  }
+
+  .channel:nth-child(3) {
+    position: relative;
+    margin: 0 0 15px 0;
+  }
+
+  .nav-item {
+    margin: 0;
+  }
+
+  .mobile-search {
+    display: block;
+    margin-left: auto;
+  }
+
+  .input-group {
+    position: fixed;
+    opacity: 0;
+    top: -100px;
+    left: 0;
+    width: 70%;
+    margin: 0 0 0 25px;
+    transition: top 0.2s;
+  }
+
+  .input-group.is-open {
+    opacity: 1;
+    top: 20px;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .swiper-slide {
+    margin: 0 0 40px 0;
+  }
+
+  .video-thumb {
+    height: 200px;
+  }
+}
+
+.channel:nth-child(3) {
+  position: relative;
+}
+
+.channel-subscribe-btn {
+  position: absolute;
+  top: 0;
+  right: 270px;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 20px;
+  background-color: #ff0000;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
